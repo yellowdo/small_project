@@ -6,12 +6,17 @@
 
 | 환경설정 | Detect_License_Plate |
 | :------------: | :------------: |
-| [Tesseract Setting](/tesseract_ins.md)  | [Source](/license_plate/detect_license_plate.ipynb)  |
+| [Tesseract Setting](/tesseract_ins.md)  | [detect_license_plate](/license_plate/detect_license_plate.ipynb)  |
 
 ---
 
-### 보행자 인식
+### CNN 활용 보행자 검출
 
+| 학습 | 확인 |
+| :------------: | :------------: |
+| [cnn_train_pedestrians](/cnn_pedestrians/cnn_train_pedestrians.ipynb) | [cnn_detect_pedestrians](/cnn_pedestrians/cnn_detect_pedestrians.ipynb) |
+
+---
 
 ### 환경 설정
 
