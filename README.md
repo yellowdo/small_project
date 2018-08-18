@@ -18,6 +18,14 @@
 
 ---
 
+### CNN 활용 자동차 검출
+
+| 학습 | 확인 |
+| :------------: | :------------: |
+| [cnn-train-car](/cnn_vehicle/cnn-train-car.ipynb) | [cnn-detect-car](/cnn_vehicle/cnn-detect-car.ipynb) |
+
+---
+
 ### 환경 설정
 
 - [Ubuntu 16.04 CUDA 9.0 and cuDNN 7.1 Install](/cuda_ins.md)
