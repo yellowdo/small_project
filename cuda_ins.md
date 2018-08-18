@@ -55,11 +55,12 @@ fi
 ```
 
 - version 확인
+
 `cat /usr/include/cudnn.h | grep -E "CUDNN_MAJOR|CUDNN_MINOR|CUDNN_PATCHLEVEL"`
 
 - GPU memory reset
  
- - PID 확인
+ * PID 확인
  
  `nvidia-smi`
  
@@ -89,12 +90,12 @@ fi
 +-----------------------------------------------------------------------------+
 ```
 
- - kill process (PID : 22698 kill)
+ * kill process (PID : 22698 kill)
  
  `sudo kill -9 22698`
  
  ```
- +-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
 | NVIDIA-SMI 384.130                Driver Version: 384.130                   |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
