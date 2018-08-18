@@ -56,3 +56,63 @@ fi
 
 - version 확인
 `cat /usr/include/cudnn.h | grep -E "CUDNN_MAJOR|CUDNN_MINOR|CUDNN_PATCHLEVEL"`
+
+- GPU memory reset
+ 
+ - PID 확인
+ 
+ `nvidia-smi`
+ 
+ ```
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 384.130                Driver Version: 384.130                   |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1080    Off  | 00000000:01:00.0  On |                  N/A |
+| 35%   50C    P8    15W / 200W |   7868MiB /  8112MiB |      3%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  GeForce GTX 1080    Off  | 00000000:02:00.0 Off |                  N/A |
+| 21%   48C    P8    15W / 200W |   7718MiB /  8114MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1163      G   /usr/lib/xorg/Xorg                            83MiB |
+|    0      2285      G   compiz                                        87MiB |
+|    0      2452      G   /opt/teamviewer/tv_bin/TeamViewer              7MiB |
+|    0     22698      C   /home/do/miniconda3/envs/tf_gpu/bin/python  7685MiB |
+|    1     22698      C   /home/do/miniconda3/envs/tf_gpu/bin/python  7707MiB |
++-----------------------------------------------------------------------------+
+```
+
+ - kill process (PID : 22698 kill)
+ 
+ `sudo kill -9 22698`
+ 
+ ```
+ +-----------------------------------------------------------------------------+
+| NVIDIA-SMI 384.130                Driver Version: 384.130                   |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1080    Off  | 00000000:01:00.0  On |                  N/A |
+| 26%   48C    P8    15W / 200W |    185MiB /  8112MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  GeForce GTX 1080    Off  | 00000000:02:00.0 Off |                  N/A |
+| 10%   48C    P8    15W / 200W |      2MiB /  8114MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1163      G   /usr/lib/xorg/Xorg                            85MiB |
+|    0      2285      G   compiz                                        87MiB |
+|    0      2452      G   /opt/teamviewer/tv_bin/TeamViewer             10MiB |
++-----------------------------------------------------------------------------+
+```
