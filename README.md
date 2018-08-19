@@ -26,6 +26,14 @@
 
 ---
 
+### 차선 검출
+ 
+| lane detection|
+| :------------: |
+| [lane detection](/lane_detection/lane-detection.ipynb) |
+
+--
+
 ### 환경 설정
 
 - [Ubuntu 16.04 CUDA 9.0 and cuDNN 7.1 Install](/cuda_ins.md)
