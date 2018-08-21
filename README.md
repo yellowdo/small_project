@@ -26,6 +26,14 @@
 
 ---
 
+### CNN 활용 Traffic Sign Recognition
+ 
+| Traffic Sign Recognition|
+| :------------: |
+| [Traffic Sign Recognition](/tsr/CNN_Traffic_Sign_Recognition.ipynb) |
+
+---
+
 ### 차선 검출
  
 | lane detection|
